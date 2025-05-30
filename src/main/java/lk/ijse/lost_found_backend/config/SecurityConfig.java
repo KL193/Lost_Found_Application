@@ -13,8 +13,8 @@ public class SecurityConfig {
         http
                 .csrf().disable()
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/auth/signup").permitAll() // ✅ Allow signup
-                        .anyRequest().authenticated() // 🔒 Other endpoints require auth
+                        .requestMatchers("/api/auth/signup").permitAll()
+                        .anyRequest().authenticated()
                 );
         return http.build();
     }
